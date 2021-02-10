@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 
+import com.luis.audiolibros.services.MiIntentService;
 import com.luis.audiolibros.services.MiServicio;
 
 import java.io.IOException;
@@ -47,6 +48,9 @@ public class DetalleFragment extends Fragment implements View.OnTouchListener, M
 
         intentServicio = new Intent(getContext(), MiServicio.class);
         getActivity().startService(intentServicio);
+
+        //intentServicio = new Intent(getContext(), MiIntentService.class);
+        //getActivity().startService(intentServicio);
 
         Libro libro = Libro.ejemploLibros().elementAt(id);
         ((TextView) vista.findViewById(R.id.titulo)).setText(libro.titulo);
@@ -142,7 +146,7 @@ public class DetalleFragment extends Fragment implements View.OnTouchListener, M
 
     @Override
     public void onStop(){
-        getActivity().stopService(intentServicio);
+        //getActivity().stopService(intentServicio);
         mediaController.hide();
         try {
             mediaPlayer.stop();

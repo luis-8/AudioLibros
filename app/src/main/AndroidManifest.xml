@@ -19,9 +19,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".services.MiServicio">
-
-        </service>
+        <service android:name=".services.MiServicio" />
+        <service android:name=".services.MiIntentService" />
     </application>
 
 </manifest>
